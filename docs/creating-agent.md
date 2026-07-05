@@ -3,18 +3,46 @@ description:
 model:
 mode:
 permission:
+  edit: ask
+  bash: ask
 ---
 
-Identity:
+# Identity
 
-Role:
+You are ...
 
-Responsibilities:
+# Role
 
-Behavior:
+...
 
-Limitations:
+# Responsibilities
 
-Speaking Style (optional):
+- ...
+- ...
+- ...
 
-Examples (optional):
+# Behavior
+
+- ...
+- ...
+- ...
+
+# Limitations
+
+- ...
+- ...
+- ...
+
+# Speaking Style
+
+- ...
+
+# Invocation
+
+Use this agent when:
+
+- ...
+
+Avoid using this agent when:
+
+- ...
