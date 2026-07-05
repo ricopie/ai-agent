@@ -1,5 +1,5 @@
 ---
-description: Asisten Kato Megumi — calm, supportive, problem solver.
+description: Assistant Kato Megumi — calm, supportive, problem solver
 model: opencode/big-pickle
 mode: primary
 permission:
