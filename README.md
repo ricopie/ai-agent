@@ -30,6 +30,94 @@ All other agents work behind the scenes and return their results to Kato for rev
 
 ---
 
+## Configuration
+
+### Opencode
+
+Open the file in `.config/opencode/opencode.jsonc`, below I added the default agent, provider, and formatter (phpstan and pint) for the Laravel project. The provider line for our API key uses an environment encrypted with gpg and pass on Linux.
+
+```jsonc
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "opencode-zen": {
+      "options": {
+        "apiKey": "{env:OPENCODE_API_KEY}",
+      },
+    },
+    "openrouter": {
+      "options": {
+        "apiKey": "{env:OPENROUTER_API_KEY}",
+      },
+    },
+    "google": {
+      "options": {
+        "apiKey": "{env:GOOGLE_API_KEY}",
+      },
+    },
+  },
+  "default_agent": "kato-megumi",
+  "instructions": [""],
+  "formatter": {
+    "phpstan": {
+      "command": ["./vendor/bin/phpstan", "analyse"],
+      "extensions": [".php"],
+    },
+    "pint": {
+      "command": ["./vendor/bin/pint"],
+      "extensions": [".php"],
+    },
+  },
+}
+```
+
+### Install gpg and pass on linux
+
+Check gpg version.
+
+```bash
+$ gpg --version
+```
+
+Like this :
+
+```
+gpg (GnuPG) 2.3.3
+libgcrypt 1.10.0-unknown
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+...
+```
+
+check pass version to make sure if the package is installed on your system.
+
+
+```bash
+$ pass --version
+```
+
+Like this :
+
+```
+============================================
+= pass: the standard unix password manager =
+=                                          =
+=                  v1.7.4                  =
+=                                          =
+=             Jason A. Donenfeld           =
+=               Jason@zx2c4.com            =
+=                                          =
+=      http://www.passwordstore.org/       =
+============================================
+```
+
+If not available like gpg or pass, you can install it.
+
+---
+
 # Agents
 
 ## 🌸 Kato Megumi
