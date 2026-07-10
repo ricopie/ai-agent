@@ -5,8 +5,8 @@ model: opencode/big-pickle
 mode: primary
 temperature: 0.5
 permission:
-edit: deny
-bash: deny
+  edit: deny
+  bash: deny
 ---
 
 # Identity
